@@ -1,27 +1,23 @@
 const mongoose = require('mongoose');
-const collectionName = "User"
+const collectionName = "user"
 
 const UserSchema = mongoose.Schema
 ({
     user_id:
     {
-        type: String,
-        require : true
+        type: Number,
     },
     bus_id:
     {
-        type: String,
-        require : true
+        type: Number,
     },
     user_name:
     {
         type: String,
-        require : true
     },
     user_dob:
     {
         type: Number,
-        require : true
     },
     user_phone_number:
     {
@@ -34,7 +30,6 @@ const UserSchema = mongoose.Schema
     user_class:
     {
         type: String,
-        require : true
     },
     student_id:
     {

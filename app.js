@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 // const bodyParser = require('body-parser')
 
-const url = "mongodb+srv://milkDelivery:zokros-7kyxdi-kuxWod@milkproject.dl6lq.mongodb.net/MILK"
+const url = "mongodb+srv://vijayvijay1997:sunder.vj@cluster0.s3gkt.mongodb.net/bustracker?authSource=admin&replicaSet=atlas-78d6x4-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true"
 
 
 //Connect to the db
-mongoose.connect(url,{ useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect(url,{ useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false})
 const db = mongoose.connection
 
 
@@ -24,8 +24,9 @@ var port = 3000;
 var host = '0.0.0.0' //must be string
 
 //Import Routes
-const user = require('./routes/userRoutes')
-const driver = require('./routes/productRoutes')
+const user = require('./routes/user_routes')
+const bus = require('./routes/bus_routes')
+// const driver = require('./routes/productRoutes')
 
 //MiddleWare
 app.use(cors());
@@ -35,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //ROUTES
 app.use('/user', user)
-app.use('/driver', product)
+app.use('/driver', bus)
 
 
 //Listening to the server
